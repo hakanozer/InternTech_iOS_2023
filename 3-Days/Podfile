@@ -7,5 +7,9 @@ target '3-Days' do
 
   # Pods for 3-Days
   pod 'Alamofire', '~> 5.8'
+  pod 'SCLAlertView', '~> 0.8'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'ImageSlideshow', '~> 1.9'
+  pod "ImageSlideshow/SDWebImage", '~> 1.9'
 
 end

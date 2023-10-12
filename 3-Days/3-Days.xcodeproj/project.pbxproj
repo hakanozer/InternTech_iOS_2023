@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DF81C4503772B2AD57617198 /* Pods_3_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79CFBDC7BEB7BF1663724B5 /* Pods_3_Days.framework */; };
+		FF24B5462AD7D1C5002AB61A /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24B5452AD7D1C5002AB61A /* ProductsModel.swift */; };
+		FF24B5492AD7DD1B002AB61A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24B5472AD7DD1B002AB61A /* Cell.swift */; };
+		FF24B54A2AD7DD1B002AB61A /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF24B5482AD7DD1B002AB61A /* Cell.xib */; };
 		FF93767B2AD67CA00003B29D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93767A2AD67CA00003B29D /* AppDelegate.swift */; };
 		FF93767D2AD67CA00003B29D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93767C2AD67CA00003B29D /* SceneDelegate.swift */; };
 		FF9376822AD67CA00003B29D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9376802AD67CA00003B29D /* Main.storyboard */; };
@@ -20,12 +23,17 @@
 		FF9F18112AD6B92E0079B2BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18102AD6B92E0079B2BC /* LoginViewController.swift */; };
 		FF9F18142AD6C54E0079B2BC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18132AD6C54E0079B2BC /* UserModel.swift */; };
 		FF9F18162AD6CFF10079B2BC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18152AD6CFF10079B2BC /* Util.swift */; };
+		FFE5C0782AD80B2D009CE93E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */; };
+		FFE5C07A2AD81751009CE93E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE5C0792AD81751009CE93E /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B89209428101E93145A939B /* Pods-3-Days.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3-Days.release.xcconfig"; path = "Target Support Files/Pods-3-Days/Pods-3-Days.release.xcconfig"; sourceTree = "<group>"; };
 		AC0E7676BD97E04C803F8A70 /* Pods-3-Days.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3-Days.debug.xcconfig"; path = "Target Support Files/Pods-3-Days/Pods-3-Days.debug.xcconfig"; sourceTree = "<group>"; };
 		C79CFBDC7BEB7BF1663724B5 /* Pods_3_Days.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_3_Days.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF24B5452AD7D1C5002AB61A /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
+		FF24B5472AD7DD1B002AB61A /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		FF24B5482AD7DD1B002AB61A /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		FF9376772AD67CA00003B29D /* 3-Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3-Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF93767A2AD67CA00003B29D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF93767C2AD67CA00003B29D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,8 @@
 		FF9F18102AD6B92E0079B2BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FF9F18132AD6C54E0079B2BC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FF9F18152AD6CFF10079B2BC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		FFE5C0792AD81751009CE93E /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,10 @@
 				FF9376942AD68A910003B29D /* ProfileViewController.swift */,
 				FF9F18102AD6B92E0079B2BC /* LoginViewController.swift */,
 				FF9F18152AD6CFF10079B2BC /* Util.swift */,
+				FF24B5472AD7DD1B002AB61A /* Cell.swift */,
+				FF24B5482AD7DD1B002AB61A /* Cell.xib */,
+				FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */,
+				FFE5C0792AD81751009CE93E /* MainNavigationController.swift */,
 			);
 			path = "3-Days";
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9F18132AD6C54E0079B2BC /* UserModel.swift */,
+				FF24B5452AD7D1C5002AB61A /* ProductsModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -178,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9376872AD67CA20003B29D /* LaunchScreen.storyboard in Resources */,
+				FF24B54A2AD7DD1B002AB61A /* Cell.xib in Resources */,
 				FF9376842AD67CA20003B29D /* Assets.xcassets in Resources */,
 				FF9376822AD67CA00003B29D /* Main.storyboard in Resources */,
 			);
@@ -233,13 +249,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9F18112AD6B92E0079B2BC /* LoginViewController.swift in Sources */,
+				FF24B5462AD7D1C5002AB61A /* ProductsModel.swift in Sources */,
 				FF9F18162AD6CFF10079B2BC /* Util.swift in Sources */,
 				FF9376952AD68A910003B29D /* ProfileViewController.swift in Sources */,
 				FF9F18142AD6C54E0079B2BC /* UserModel.swift in Sources */,
+				FFE5C0782AD80B2D009CE93E /* ProductDetailViewController.swift in Sources */,
 				FF93768F2AD6827E0003B29D /* AppTabbarController.swift in Sources */,
 				FF93767B2AD67CA00003B29D /* AppDelegate.swift in Sources */,
+				FF24B5492AD7DD1B002AB61A /* Cell.swift in Sources */,
 				FF93767D2AD67CA00003B29D /* SceneDelegate.swift in Sources */,
 				FF9376932AD68A780003B29D /* SettingsViewController.swift in Sources */,
+				FFE5C07A2AD81751009CE93E /* MainNavigationController.swift in Sources */,
 				FF9376912AD68A520003B29D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

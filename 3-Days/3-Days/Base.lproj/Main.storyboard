@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,21 +42,89 @@
             </objects>
             <point key="canvasLocation" x="656" y="366"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="YFI-l9-YpN">
             <objects>
                 <viewController id="XGQ-zI-Opf" customClass="HomeViewController" customModule="__Days" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGg-Of-pmR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6sz-gF-cyc">
+                                <rect key="frame" x="-2" y="102" width="393" height="666"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XGQ-zI-Opf" id="mDN-Ao-jid"/>
+                                    <outlet property="delegate" destination="XGQ-zI-Opf" id="WEQ-HS-An9"/>
+                                    <outlet property="prefetchDataSource" destination="WGg-Of-pmR" id="EX1-5l-If9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9eg-yC-tHt"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homepodmini" catalog="system" id="e2c-ao-HeP"/>
+                    <navigationItem key="navigationItem" id="8Rq-wN-3kO"/>
+                    <connections>
+                        <outlet property="productTableView" destination="6sz-gF-cyc" id="oSa-bt-KeH"/>
+                        <segue destination="G00-xl-Nx5" kind="show" identifier="productDetail" id="bd6-zT-0WW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I08-yO-8Os" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656" y="-284"/>
+            <point key="canvasLocation" x="1400.7633587786258" y="-285.21126760563379"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="CRY-yl-9LO">
+            <objects>
+                <viewController id="G00-xl-Nx5" customClass="ProductDetailViewController" customModule="__Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jjr-6z-V6E">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7L-4I-pbE">
+                                <rect key="frame" x="0.0" y="103" width="392" height="666"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwH-dh-DDs">
+                                        <rect key="frame" x="16" y="0.0" width="361" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-ac-0Ya" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                        <rect key="frame" x="-1" y="66" width="393" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j7D-Ge-ocM">
+                                        <rect key="frame" x="16" y="354" width="361" height="209"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                    </textView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xCl-Mq-W38"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Hx1-vy-o0Q"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KQB-HR-331"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NWb-oj-H2C"/>
+                    <connections>
+                        <outlet property="slideshow" destination="mJc-ac-0Ya" id="Aj5-aN-2gK"/>
+                        <outlet property="txtDetail" destination="j7D-Ge-ocM" id="sPs-6U-8en"/>
+                        <outlet property="txtTitle" destination="wwH-dh-DDs" id="rgn-Ac-rAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67d-aL-Abz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139.6946564885498" y="-285.21126760563379"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="NXD-Uo-eSl">
@@ -84,7 +151,7 @@
                                 <rect key="frame" x="16" y="159" width="361" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yi-m5-2hM">
                                 <rect key="frame" x="311" y="201" width="66" height="35"/>
@@ -117,11 +184,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                        <color key="barTintColor" name="AccentColor"/>
-                        <color key="selectedImageTintColor" name="AccentColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XGQ-zI-Opf" kind="relationship" relationship="viewControllers" id="dgC-HQ-a3W"/>
+                        <segue destination="Zph-jo-ofL" kind="relationship" relationship="viewControllers" id="dgC-HQ-a3W"/>
                         <segue destination="K0A-Dt-baX" kind="relationship" relationship="viewControllers" id="0uU-0L-2rz"/>
                         <segue destination="3z0-m3-miD" kind="relationship" relationship="viewControllers" id="qVU-8I-KiM"/>
                     </connections>
@@ -130,14 +198,33 @@
             </objects>
             <point key="canvasLocation" x="-249" y="19"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="0vS-Oq-I7t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zph-jo-ofL" customClass="MainNavigationController" customModule="__Days" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="homepodmini" catalog="system" id="e2c-ao-HeP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBl-bm-bme">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j0x-n8-f93">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="XGQ-zI-Opf" kind="relationship" relationship="rootViewController" id="d2P-se-hGG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYX-0c-1nD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655.72519083969462" y="-284.50704225352115"/>
+        </scene>
     </scenes>
     <resources>
         <image name="homepodmini" catalog="system" width="128" height="105"/>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -147,8 +234,8 @@
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

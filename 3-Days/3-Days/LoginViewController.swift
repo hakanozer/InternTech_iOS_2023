@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class LoginViewController: UIViewController {
     
@@ -31,7 +32,7 @@ class LoginViewController: UIViewController {
                 }
             }else {
                 // fail
-                print("Username or Password Fail!")
+                SCLAlertView().showWarning("Error", subTitle: "Username or Password Fail!")
             }
         }
         
