@@ -25,6 +25,7 @@
 		FF9F18162AD6CFF10079B2BC /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F18152AD6CFF10079B2BC /* Util.swift */; };
 		FFE5C0782AD80B2D009CE93E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */; };
 		FFE5C07A2AD81751009CE93E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE5C0792AD81751009CE93E /* MainNavigationController.swift */; };
+		FFE6F77A2AD920130093D8E5 /* proje.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FFE6F7792AD920130093D8E5 /* proje.sqlite3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FF9F18152AD6CFF10079B2BC /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		FFE5C0792AD81751009CE93E /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		FFE6F7792AD920130093D8E5 /* proje.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = proje.sqlite3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				FF24B5482AD7DD1B002AB61A /* Cell.xib */,
 				FFE5C0772AD80B2D009CE93E /* ProductDetailViewController.swift */,
 				FFE5C0792AD81751009CE93E /* MainNavigationController.swift */,
+				FFE6F7792AD920130093D8E5 /* proje.sqlite3 */,
 			);
 			path = "3-Days";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9376872AD67CA20003B29D /* LaunchScreen.storyboard in Resources */,
+				FFE6F77A2AD920130093D8E5 /* proje.sqlite3 in Resources */,
 				FF24B54A2AD7DD1B002AB61A /* Cell.xib in Resources */,
 				FF9376842AD67CA20003B29D /* Assets.xcassets in Resources */,
 				FF9376822AD67CA00003B29D /* Main.storyboard in Resources */,

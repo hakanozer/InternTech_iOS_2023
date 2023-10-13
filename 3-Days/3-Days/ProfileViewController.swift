@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import MapKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, MKMapViewDelegate {
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let arr:[Dictionary<String, Any>] = [
+        ["title": "İşletme -1", "detail": "İşletme -1 Detail", "lat": 41.028780, "long": 28.986365],
+        ["title": "İşletme -2", "detail": "İşletme -2 Detail", "lat": 41.033780, "long": 28.981365]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("ProfileViewController Call")
+        mapView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -20,14 +26,5 @@ class ProfileViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

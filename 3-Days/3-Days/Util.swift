@@ -9,6 +9,8 @@ import Foundation
 
 class Util {
     
+    static let sqlitePath = "/Users/hakan/Documents/InternTech_iOS_2023/3-Days/3-Days/proje.sqlite3"
+    
    static func userStore(data: Data) {
         let userModel = try? JSONDecoder().decode(UserModel.self, from: data)
         if let jsonUserModel = try? JSONEncoder().encode(userModel) {

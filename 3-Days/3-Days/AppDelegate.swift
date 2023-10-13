@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SQLite
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        databaseTableCreate()
         return true
+    }
+    
+    func databaseTableCreate() {
+        let db = try! Connection(Util.sqlitePath)
+        let likes = Table("likes")
+        do {
+            //let likesExists = try db.scalar(likes.exists)
+            //print("likesExists \(likesExists)")
+            //if likesExists {
+                let lid = Expression<Int64>("lid")
+                let pid = Expression<Int64>("pid")
+                try db.run(likes.create(ifNotExists: true) { t in
+                    t.column(lid, primaryKey: true)
+                    t.column(pid)
+                })
+            //}
+        } catch {
+            print (error)
+        }
     }
 
     // MARK: UISceneSession Lifecycle

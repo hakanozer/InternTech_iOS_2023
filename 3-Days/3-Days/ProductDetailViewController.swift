@@ -8,16 +8,36 @@
 import UIKit
 import ImageSlideshow
 import SDWebImage
+import SQLite
 
 class ProductDetailViewController: UIViewController, ImageSlideshowDelegate {
     
     var item: Product? = nil
     
+    
     @IBOutlet weak var txtTitle: UILabel!
     @IBOutlet var slideshow: ImageSlideshow!
     @IBOutlet weak var txtDetail: UITextView!
     
-
+    @IBOutlet weak var btnLike: UIButton!
+    @IBAction func fncLike(_ sender: UIButton) {
+        if item != nil {
+            let db = try! Connection(Util.sqlitePath)
+            let likes = Table("likes")
+            let pid = Expression<Int64>("pid")
+            let likesSingleRow = likes.filter(pid == Int64(item!.id))
+            //if likesSingleRow.select() {
+                let result = likes.insert(pid <- Int64(item!.id))
+                let rowid = try! db.run(result)
+                if rowid > 0 {
+                    print("success \(rowid)")
+                //}
+            }else {
+                print("daha önce kayıtlı")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

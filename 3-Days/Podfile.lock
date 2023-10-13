@@ -1,16 +1,42 @@
 PODS:
   - Alamofire (5.8.0)
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/SDWebImage (1.9.2):
+    - ImageSlideshow/Core
+    - SDWebImage (>= 3.7)
+  - SCLAlertView (0.8)
+  - SDWebImage (5.13.0):
+    - SDWebImage/Core (= 5.13.0)
+  - SDWebImage/Core (5.13.0)
+  - SQLite.swift (0.14.1):
+    - SQLite.swift/standard (= 0.14.1)
+  - SQLite.swift/standard (0.14.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.8)
+  - ImageSlideshow (~> 1.9)
+  - ImageSlideshow/SDWebImage (~> 1.9)
+  - SCLAlertView (~> 0.8)
+  - SDWebImage (~> 5.0)
+  - SQLite.swift (~> 0.14)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ImageSlideshow
+    - SCLAlertView
+    - SDWebImage
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
+  SQLite.swift: 2992550ebf3c5b268bf4352603e3df87d2a4ed72
 
-PODFILE CHECKSUM: bac4a92664f5374966930cf37ce99a9f609ada1e
+PODFILE CHECKSUM: 887294438fb371eda95666fad05114091e18de10
 
 COCOAPODS: 1.13.0
