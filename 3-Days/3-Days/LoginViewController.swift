@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SCLAlertView
+import UserNotifications
 
 class LoginViewController: UIViewController {
     
@@ -35,13 +36,56 @@ class LoginViewController: UIViewController {
                 SCLAlertView().showWarning("Error", subTitle: "Username or Password Fail!")
             }
         }
+    }
+    
+    
+    let center = UNUserNotificationCenter.current()
+    @IBAction func fncAddNotication(_ sender: UIButton) {
+        
+        // Content
+        let content = UNMutableNotificationContent()
+        content.title = "Bildirim Başlığı"
+        content.subtitle = "Bildirim Alt Başlığı"
+        content.body = "Bildirim Ayrıntısı"
+        content.sound = UNNotificationSound.default
+        
+        // Trigger
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        
+        let identifier = "userNotification"
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            if error != nil {
+                print("Notication Error")
+            }else {
+                print("Notificcation Create Success")
+            }
+        }
         
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.center.delegate = self
     }
     
 
+}
+
+
+
+extension UIViewController : UNUserNotificationCenterDelegate {
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
 }

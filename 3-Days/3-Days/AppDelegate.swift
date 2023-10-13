@@ -11,10 +11,22 @@ import SQLite
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let center = UNUserNotificationCenter.current()
+    let options: UNAuthorizationOptions = [.badge, .alert, .sound]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         databaseTableCreate()
+        
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                self.center.requestAuthorization(options: self.options) { (accept, error) in
+                    if !accept {
+                        print("Error")
+                    }
+                }
+            }
+        }
+        
         return true
     }
     

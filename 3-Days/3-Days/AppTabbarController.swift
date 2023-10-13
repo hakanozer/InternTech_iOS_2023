@@ -15,7 +15,7 @@ class AppTabbarController: UITabBarController {
         if let userIndex = UserDefaults.standard.object(forKey: "index") {
             index = userIndex as! Int
         }
-        selectedIndex = index
+        //selectedIndex = index
         addButton()
     }
     
